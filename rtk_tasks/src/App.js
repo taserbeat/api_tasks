@@ -3,6 +3,7 @@ import styles from './App.module.css';
 
 import { FaSignInAlt } from 'react-icons/fa';
 import TaskList from './features/task/TaskList';
+import TaskDetails from './features/task/TaskDetails';
 
 function App() {
   const logout = () => {
@@ -19,7 +20,9 @@ function App() {
         <TaskList />
       </div>
 
-      <div className={styles.appDetails}></div>
+      <div className={styles.appDetails}>
+        <TaskDetails />
+      </div>
     </div>
   );
 }
