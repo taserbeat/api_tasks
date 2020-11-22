@@ -21,7 +21,7 @@ export const fetchAsyncGet = createAsyncThunk('task/get', async () => {
 });
 
 export const fetchAsyncCreate = createAsyncThunk('task/post', async (task) => {
-    const res = await axios.post(apiUrl, task, {
+    const res = await axios.post(`${apiUrl}/`, task, {
         headers: {
             'Content-Type': 'application/json',
             Authorization: `JWT ${token}`,
@@ -31,7 +31,7 @@ export const fetchAsyncCreate = createAsyncThunk('task/post', async (task) => {
 });
 
 export const fetchAsyncUpdate = createAsyncThunk('task/put', async (task) => {
-    const res = await axios.put(`${apiUrl}/${task.id}`, task, {
+    const res = await axios.put(`${apiUrl}/${task.id}/`, task, {
         headers: {
             'Content-Type': 'application/json',
             Authorization: `JWT ${token}`,
@@ -41,7 +41,7 @@ export const fetchAsyncUpdate = createAsyncThunk('task/put', async (task) => {
 });
 
 export const fetchAsyncDelete = createAsyncThunk('task/delete', async (id) => {
-    await axios.delete(`${apiUrl}/${id}`, {
+    await axios.delete(`${apiUrl}/${id}/`, {
         headers: {
             'Content-Type': 'application/json',
             Authorization: `JWT ${token}`,
